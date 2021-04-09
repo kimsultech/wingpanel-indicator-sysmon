@@ -1,5 +1,5 @@
-Source: com.github.plugarut.wingpanel-monitor
-Maintainer: Tudor Plugaru <plugaru.tudor@gmail.com>
+Source: wingpanel-indicator-sysmon
+Maintainer: Fernando Casas Schössow <casasfernando@outlook.com>
 Section: x11
 Priority: optional
 Build-Depends: debhelper (>= 10),
@@ -12,11 +12,11 @@ Build-Depends: debhelper (>= 10),
                meson,
                valac (>= 0.34)
 Standards-Version: 3.9.7
-Homepage: https://github.com/PlugaruT/wingpanel-monitor
+Homepage: https://github.com/casasfernando/wingpanel-indicator-sysmon
 
-Package: com.github.plugarut.wingpanel-monitor
+Package: wingpanel-indicator-sysmon
 Architecture: any
 Depends: ${misc:Pre-Depends},${misc:Depends}, ${shlibs:Depends}
 Enhances: wingpanel
-Description: Wingpanel Monitor Indicator
+Description: Wingpanel system monitor indicator
  System monitor indicator for wingpanel
