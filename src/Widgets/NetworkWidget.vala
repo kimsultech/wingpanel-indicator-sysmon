@@ -22,9 +22,7 @@
 namespace WingpanelMonitor {
     public class NetworkWidget : Gtk.Grid {
         private Gtk.Revealer widget_revealer;
-        //private Gtk.Label u_label;
         private Gtk.Label upload_label;
-        //private Gtk.Label d_label;
         private Gtk.Label download_label;
 
         public bool display {
@@ -38,11 +36,11 @@ namespace WingpanelMonitor {
             // Define widget icons and sizes
             // Network icon
             var icon = new Gtk.Image.from_icon_name ("net-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
-            // Upload  icon
-            var icon_up = new Gtk.Image.from_icon_name ("net-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            // Upload icon
+            var icon_up = new Gtk.Image.from_icon_name ("up-read-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             icon_up.set_pixel_size (10);
             // Download icon
-            var icon_down = new Gtk.Image.from_icon_name ("net-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var icon_down = new Gtk.Image.from_icon_name ("down-read-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             icon_down.set_pixel_size (10);
 
             // Define upload value label
