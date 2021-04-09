@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="data/icons/128/com.github.plugarut.wingpanel-monitor" alt="Wingpanel Monitor icon"/>
+  <img src="data/icons/128/com.github.plugarut.wingpanel-monitor.svg" alt="Wingpanel Monitor icon"/>
 </p>
 <h1 align="center">Wingpanel Monitor</h1>
 
