@@ -1,11 +1,12 @@
 .small-label {
     font-size: 10px;
+    padding: 0px;
 }
 
-.upload {
-    margin-bottom: 6px;
+.upload-download {
+    margin-left: 0px;
+    margin-right: 8px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-.download {
-    margin-top: 6px;
-}

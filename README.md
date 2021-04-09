@@ -48,3 +48,4 @@ com.github.plugarut.wingpanel-monitor
 
 ## Special Thanks
  - [Nararyans R.I.](https://github.com/Fatih20) for the icon
+ - Network widget icon (net-symbolic.svg) made by [Freepik](https://www.freepik.com) from [https://www.flaticon.com/](www.flaticon.com)

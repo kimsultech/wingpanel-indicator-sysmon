@@ -22,7 +22,9 @@
 namespace WingpanelMonitor {
     public class NetworkWidget : Gtk.Grid {
         private Gtk.Revealer widget_revealer;
+        //private Gtk.Label u_label;
         private Gtk.Label upload_label;
+        //private Gtk.Label d_label;
         private Gtk.Label download_label;
 
         public bool display {
@@ -33,26 +35,49 @@ namespace WingpanelMonitor {
         construct {
             orientation = Gtk.Orientation.HORIZONTAL;
 
-            var icon = new Gtk.Image.from_icon_name ("up-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            // Define widget icons and sizes
+            // Network icon
+            var icon = new Gtk.Image.from_icon_name ("net-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            // Upload  icon
+            var icon_up = new Gtk.Image.from_icon_name ("net-up-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            icon_up.set_pixel_size (10);
+            // Download icon
+            var icon_down = new Gtk.Image.from_icon_name ("net-down-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            icon_down.set_pixel_size (10);
 
+            // Define upload value label
             upload_label = new Gtk.Label ("N/A");
             upload_label.set_width_chars (8);
-            upload_label.halign = Gtk.Align.START;
+            upload_label.set_xalign (1);
+            upload_label.set_yalign (1);
             var upload_label_context = upload_label.get_style_context ();
             upload_label_context.add_class ("small-label");
-            upload_label_context.add_class ("upload");
+            upload_label_context.add_class ("upload-download");
 
+            // Define download value label
             download_label = new Gtk.Label ("N/A");
             download_label.set_width_chars (8);
-            download_label.halign = Gtk.Align.END;
+            download_label.set_xalign (1);
+            download_label.set_yalign (0);
             var down_label_context = download_label.get_style_context ();
             down_label_context.add_class ("small-label");
-            down_label_context.add_class ("download");
+            down_label_context.add_class ("upload-download");
 
+            // Define widget packaging grid
             var group = new Gtk.Grid ();
-            group.add (upload_label);
-            group.add (icon);
-            group.add (download_label);
+            group.set_column_spacing (0);
+            group.set_row_spacing (0);
+            group.set_row_homogeneous (true);
+            // Add network icon
+            group.attach (icon, 0, 0, 1, 2);
+            // Add upload icon
+            group.attach (icon_up, 1, 0, 1, 1);
+            // Add download icon
+            group.attach_next_to (icon_down, icon_up, Gtk.PositionType.BOTTOM, 1, 1);
+            // Add upload value label
+            group.attach (upload_label, 2, 0, 1, 1);
+            // Add download value label
+            group.attach_next_to (download_label, upload_label, Gtk.PositionType.BOTTOM, 1, 1);
 
             widget_revealer = new Gtk.Revealer ();
             widget_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
