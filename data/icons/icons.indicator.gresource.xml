@@ -7,5 +7,6 @@
     <file compressed="true" preprocess="xml-stripblanks">net-symbolic.svg</file>
     <file compressed="true" preprocess="xml-stripblanks">upload-read-symbolic.svg</file>
     <file compressed="true" preprocess="xml-stripblanks">download-write-symbolic.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">disk-symbolic.svg</file>
   </gresource>
 </gresources>
