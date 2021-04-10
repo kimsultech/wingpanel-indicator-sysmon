@@ -1,3 +1,10 @@
+wingpanel-indicator-sysmon (0.3.0) bionic; urgency=medium
+
+  * Added disk usage widget from https://github.com/mathieurousseau/wingpanel-monitor/commit/3cf5b9ebde5639be041e713d79119f6add99a1ac with some design modifications
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Fri, 09 Apr 2021 23:05:00 +0200
+
 wingpanel-indicator-sysmon (0.2.0) bionic; urgency=medium
 
   * Project forked from https://github.com/PlugaruT/wingpanel-monitor.
@@ -6,7 +13,7 @@ wingpanel-indicator-sysmon (0.2.0) bionic; urgency=medium
 
 
  -- Fernando Casas Schössow <casasfernando@outlook.com>  Fri, 09 Apr 2021 18:05:00 +0200
- 
+
 wingpanel-monitor (0.1.0) bionic; urgency=medium
 
   * Initial release.
