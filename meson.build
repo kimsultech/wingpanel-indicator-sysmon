@@ -28,9 +28,7 @@ config_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 configure_file(output: 'config.h', configuration: config_data)
 config_h_dir = include_directories('.')
 
-
 c_args = [
-  '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
   '-include', 'config.h',
   '-w',
 ]
@@ -40,7 +38,6 @@ executable(
     icons_gresource,
     'src/Application.vala',
     'src/MainWindow.vala',
-    'src/Widgets/SpinRow.vala',
     'src/Widgets/Toggles.vala',
     c_args: c_args,
     dependencies: [
@@ -49,8 +46,6 @@ executable(
         dependency('granite'),
         dependency('gtk+-3.0'),
         dependency('libgtop-2.0'),
-        dependency('gweather-3.0'),
-        dependency('libgeoclue-2.0'),
         wingpanel,
         meson.get_compiler('c').find_library('m', required : false),
         meson.get_compiler('vala').find_library('posix')
@@ -60,8 +55,6 @@ executable(
     ],
     install: true
 )
-
-
 
 shared_module(
     'wingpanel-monitor',

@@ -15,8 +15,6 @@ libgtop2-dev
 libgranite-dev
 libgtk-3-dev
 libwingpanel-2.0-dev
-libgeoclue-2-dev
-libgweather-3-dev
 meson
 valac
 ```
@@ -24,7 +22,7 @@ valac
 You can install them running:
 
 ```
-sudo apt install libgtop2-dev libgranite-dev libgtk-3-dev libwingpanel-2.0-dev meson valac libgeoclue-2-dev libgweather-3-dev
+sudo apt install libgtop2-dev libgranite-dev libgtk-3-dev libwingpanel-2.0-dev meson valac
 ```
 
 Run `meson` to configure the build environment and then `ninja` to build

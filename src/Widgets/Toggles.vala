@@ -26,10 +26,8 @@ namespace WingpanelMonitor {
         private Wingpanel.Widgets.Switch network_switch;
         private Wingpanel.Widgets.Switch disk_switch;
         private Wingpanel.Widgets.Switch workspace_switch;
-        private Wingpanel.Widgets.Switch weather_switch;
         private Wingpanel.Widgets.Switch icon_only_switch;
         private Wingpanel.Widgets.Switch indicator;
-        private SpinRow weather_refresh_spin;
         public unowned Settings settings { get; construct set; }
 
         public TogglesWidget (Settings settings) {
@@ -47,10 +45,6 @@ namespace WingpanelMonitor {
             workspace_switch = new Wingpanel.Widgets.Switch (
                 "Workspace number", settings.get_boolean ("show-workspace")
                 );
-            weather_switch = new Wingpanel.Widgets.Switch (
-                "Weather for %s".printf (settings.get_string ("weather-location")),
-                settings.get_boolean ("show-weather")
-                );
             indicator = new Wingpanel.Widgets.Switch ("ON/OFF", settings.get_boolean ("display-indicator"));
 
             settings.bind ("display-indicator", indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
@@ -60,15 +54,7 @@ namespace WingpanelMonitor {
             settings.bind ("show-network", network_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-disk", disk_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-workspace", workspace_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("show-weather", weather_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("icon-only", icon_only_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-
-
-            weather_refresh_spin = new SpinRow ("Weather refresh rate (min)", 1, 60);
-            weather_refresh_spin.set_spin_value (settings.get_int ("weather-refresh-rate"));
-            weather_refresh_spin.changed.connect ( () => {
-                settings.set_int ("weather-refresh-rate", weather_refresh_spin.get_spin_value ());
-            });
 
             add (indicator);
             add (new Wingpanel.Widgets.Separator ());
@@ -78,8 +64,6 @@ namespace WingpanelMonitor {
             add (network_switch);
             add (disk_switch);
             add (workspace_switch);
-            add (weather_switch);
-            add (weather_refresh_spin);
             add (new Wingpanel.Widgets.Separator ());
         }
     }
