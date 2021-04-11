@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">Wingpanel Monitor</h1>
 
-![Screenshot](data/screenshot_1.png)
+![Screenshot](data/screenshot_1.png) ![Screenshot](data/screenshot_2.png) ![Screenshot](data/screenshot_3.png)
 
 ## Building and Installation
 
