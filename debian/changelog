@@ -1,3 +1,13 @@
+wingpanel-indicator-sysmon (0.4.0) bionic; urgency=medium
+
+  * Updated screenshot
+  * Changed widget order to match window and settings
+  * Removed weather widget
+  * Changed application icon
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Fri, 10 Apr 2021 09:52:00 +0200
+
 wingpanel-indicator-sysmon (0.3.0) bionic; urgency=medium
 
   * Added disk usage widget from https://github.com/mathieurousseau/wingpanel-monitor/commit/3cf5b9ebde5639be041e713d79119f6add99a1ac with some design modifications
