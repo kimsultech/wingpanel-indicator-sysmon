@@ -57,10 +57,10 @@ namespace WingpanelMonitor {
             settings.bind ("icon-only", icon_only, "display", SettingsBindFlags.GET);
 
             add (icon_only);
-            add (network_info);
-            add (disk_info);
             add (cpu_info);
             add (ram_info);
+            add (network_info);
+            add (disk_info);
             add (workspace_info);
         }
 
