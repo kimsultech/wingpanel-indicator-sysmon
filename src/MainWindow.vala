@@ -27,7 +27,7 @@ namespace WingpanelSystemMonitor {
                 application: application,
                 border_width: 1,
                 icon_name: "com.github.casasfernando.wingpanel-indicator-sysmon",
-                resizable: false, title: "Wingpanel System Monitor",
+                resizable: false, title: "Wingpanel System Monitor - Preferences",
                 window_position: Gtk.WindowPosition.CENTER,
                 default_width: 300
                 );
