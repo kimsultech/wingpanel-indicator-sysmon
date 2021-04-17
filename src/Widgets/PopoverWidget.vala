@@ -54,12 +54,6 @@ namespace WingpanelSystemMonitor {
             settings_button.text = _ ("Open Settings…");
             settings_button.clicked.connect (open_settings);
 
-            var hide_button = new Gtk.ModelButton ();
-            hide_button.text = _ ("Hide Indicator");
-            hide_button.clicked.connect ( () => {
-                settings.set_value ("display-indicator", false);
-            });
-
             var title_label = new Gtk.Label ("Wingpanel System Monitor");
             title_label.halign = Gtk.Align.CENTER;
             title_label.hexpand = true;
@@ -78,7 +72,6 @@ namespace WingpanelSystemMonitor {
             add (disk_read);
             add (disk_write);
             add (new Wingpanel.Widgets.Separator ());
-            add (hide_button);
             add (settings_button);
         }
 
