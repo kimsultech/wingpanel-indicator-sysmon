@@ -19,10 +19,10 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
-    public class WingpanelMonitor : Gtk.Application {
-        public WingpanelMonitor () {
-            Object (application_id: "com.github.plugarut.wingpanel-monitor",
+namespace WingpanelSystemMonitor {
+    public class WingpanelSystemMonitor : Gtk.Application {
+        public WingpanelSystemMonitor () {
+            Object (application_id: "com.github.casasfernando.wingpanel-indicator-sysmon",
                     flags : ApplicationFlags.FLAGS_NONE);
         }
 
@@ -46,7 +46,7 @@ namespace WingpanelMonitor {
         private static int main (string[] args) {
             Gtk.init (ref args);
 
-            var app = new WingpanelMonitor ();
+            var app = new WingpanelSystemMonitor ();
             return app.run (args);
         }
     }

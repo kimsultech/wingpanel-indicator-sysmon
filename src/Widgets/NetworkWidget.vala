@@ -19,7 +19,7 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelSystemMonitor {
     public class NetworkWidget : Gtk.Grid {
         private Gtk.Revealer widget_revealer;
         private Gtk.Label upload_label;

@@ -18,7 +18,7 @@
  *
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
-namespace WingpanelMonitor {
+namespace WingpanelSystemMonitor {
     public class Network : GLib.Object {
         private int _bytes_in;
         private int _bytes_in_old;

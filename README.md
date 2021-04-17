@@ -1,9 +1,11 @@
 <p align="center">
-  <img src="data/icons/128/com.github.plugarut.wingpanel-monitor.svg" alt="Wingpanel Monitor icon"/>
+  <img src="data/icons/128/com.github.casasfernando.wingpanel-indicator-sysmon.svg" alt="Wingpanel System Monitor icon"/>
 </p>
-<h1 align="center">Wingpanel Monitor</h1>
+<h1 align="center">Wingpanel System Monitor</h1>
 
-![Screenshot](data/screenshot_1.png) ![Screenshot](data/screenshot_2.png) ![Screenshot](data/screenshot_3.png)
+![Screenshot](data/screenshot_1.png) ![Screenshot](data/screenshot_2.png)
+### Settings:
+![Screenshot](data/screenshot_3.png)
 
 ## Building and Installation
 
@@ -37,7 +39,7 @@ To install, use `ninja install`
 
 ```
 sudo ninja install
-com.github.plugarut.wingpanel-monitor
+com.github.casasfernando.wingpanel-indicator-sysmon
 ```
 
 ## Special thanks and credits

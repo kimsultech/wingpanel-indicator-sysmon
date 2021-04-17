@@ -18,7 +18,7 @@
  *
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
-namespace WingpanelMonitor {
+namespace WingpanelSystemMonitor {
     public class Disk : GLib.Object {
         private int _bytes_write;
         private ulong _bytes_write_old;

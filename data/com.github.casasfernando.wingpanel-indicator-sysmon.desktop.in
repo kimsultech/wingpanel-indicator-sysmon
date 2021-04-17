@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Wingpanel System Monitor
+GenericName=Wingpanel System Monitor
+Comment=Display system resources usage information in WIngpanel
+Categories=System;Utility;
+Exec=com.github.casasfernando.wingpanel-indicator-sysmon
+Icon=com.github.casasfernando.wingpanel-indicator-sysmon
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=com.github.casasfernando.wingpanel-indicator-sysmon
+Keywords=System monitor;System usage;
+X-GNOME-UsesNotifications=false

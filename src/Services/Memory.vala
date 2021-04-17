@@ -19,7 +19,7 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelSystemMonitor {
     public class Memory : GLib.Object {
         private int _percentage_used;
         private double _total;

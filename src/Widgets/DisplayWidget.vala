@@ -20,7 +20,7 @@
  */
 
 
-namespace WingpanelMonitor {
+namespace WingpanelSystemMonitor {
     public class DisplayWidget : Gtk.Grid {
         private IndicatorWidget cpu_info;
         private IndicatorWidget ram_info;
@@ -77,14 +77,14 @@ namespace WingpanelMonitor {
         }
 
         public void update_network (int upload, int download) {
-            string up = WingpanelMonitor.Utils.format_net_speed (upload, true, false);
-            string down = WingpanelMonitor.Utils.format_net_speed (download, true, false);
+            string up = WingpanelSystemMonitor.Utils.format_net_speed (upload, true, false);
+            string down = WingpanelSystemMonitor.Utils.format_net_speed (download, true, false);
             network_info.update_label_data (up, down);
         }
 
         public void update_disk (int read, int write) {
-            string read_s = WingpanelMonitor.Utils.format_net_speed (read, true, false);
-            string write_s = WingpanelMonitor.Utils.format_net_speed (write, true, false);
+            string read_s = WingpanelSystemMonitor.Utils.format_net_speed (read, true, false);
+            string write_s = WingpanelSystemMonitor.Utils.format_net_speed (write, true, false);
             disk_info.update_label_data (read_s, write_s);
         }
 

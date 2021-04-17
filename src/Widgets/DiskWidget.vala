@@ -19,7 +19,7 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelSystemMonitor {
     public class DiskWidget : Gtk.Grid {
         private Gtk.Revealer widget_revealer;
         private Gtk.Label read_label;

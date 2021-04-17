@@ -19,7 +19,7 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelSystemMonitor {
     public class TogglesWidget : Gtk.Grid {
         private Wingpanel.Widgets.Switch cpu_switch;
         private Wingpanel.Widgets.Switch ram_switch;

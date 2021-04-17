@@ -19,7 +19,7 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelSystemMonitor {
     public class PopoverWidget : Gtk.Grid {
         private PopoverWidgetRow cpu_freq;
         private PopoverWidgetRow uptime;
@@ -60,7 +60,7 @@ namespace WingpanelMonitor {
                 settings.set_value ("display-indicator", false);
             });
 
-            var title_label = new Gtk.Label ("Wingpanel Monitor");
+            var title_label = new Gtk.Label ("Wingpanel System Monitor");
             title_label.halign = Gtk.Align.CENTER;
             title_label.hexpand = true;
             title_label.margin_start = 9;
@@ -85,7 +85,7 @@ namespace WingpanelMonitor {
         private void open_settings () {
             try {
                 var appinfo = AppInfo.create_from_commandline (
-                    "com.github.plugarut.wingpanel-monitor", null, AppInfoCreateFlags.NONE
+                    "com.github.casasfernando.wingpanel-indicator-sysmon", null, AppInfoCreateFlags.NONE
                     );
                 appinfo.launch (null, null);
             } catch (Error e) {

@@ -19,9 +19,9 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelSystemMonitor {
     public class Indicator : Wingpanel.Indicator {
-        const string APPNAME = "wingpanel-monitor";
+        const string APPNAME = "wingpanel-indicator-sysmon";
 
         private DisplayWidget display_widget;
         private PopoverWidget popover_widget;
@@ -38,21 +38,21 @@ namespace WingpanelMonitor {
         public Indicator (Wingpanel.IndicatorManager.ServerType server_type) {
             Object (
                 code_name: APPNAME,
-                display_name: "Wingpanel-Monitor",
+                display_name: "Wingpanel System Monitor",
                 description: "System monitor indicator for Wingpanel"
                 );
         }
 
         construct {
             var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("/com/github/plugarut/wingpanel-monitor/icons/Application.css");
+            provider.load_from_resource ("/com/github/casasfernando/wingpanel-indicator-sysmon/icons/Application.css");
             Gtk.StyleContext.add_provider_for_screen (
                 Gdk.Screen.get_default (),
                 provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
 
-            Gtk.IconTheme.get_default ().add_resource_path ("/com/github/plugarut/wingpanel-monitor/icons");
+            Gtk.IconTheme.get_default ().add_resource_path ("/com/github/casasfernando/wingpanel-indicator-sysmon/icons");
             cpu_data = new CPU ();
             memory_data = new Memory ();
             network_data = new Network ();
@@ -60,7 +60,7 @@ namespace WingpanelMonitor {
             system_data = new System ();
             screen = Gdk.Screen.get_default () as Gdk.X11.Screen;
 
-            settings = new GLib.Settings ("com.github.plugarut.wingpanel-monitor");
+            settings = new GLib.Settings ("com.github.casasfernando.wingpanel-indicator-sysmon");
 
             visible = settings.get_boolean ("display-indicator");
 
@@ -120,14 +120,14 @@ namespace WingpanelMonitor {
     }
 }
 public Wingpanel.Indicator ? get_indicator (Module module, Wingpanel.IndicatorManager.ServerType server_type) {
-    debug ("Loading system monitor indicator");
+    debug ("wingpanel-indicator-sysmon: loading system monitor indicator");
 
     if (server_type != Wingpanel.IndicatorManager.ServerType.SESSION) {
-        debug ("Wingpanel is not in session, not loading wingpanel-monitor indicator");
+        debug ("Wingpanel is not in session, not loading wingpanel-indicator-sysmon indicator");
         return null;
     }
 
-    var indicator = new WingpanelMonitor.Indicator (server_type);
+    var indicator = new WingpanelSystemMonitor.Indicator (server_type);
 
     return indicator;
 }

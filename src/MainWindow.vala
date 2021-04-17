@@ -19,22 +19,22 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelSystemMonitor {
     public class MainWindow : Gtk.Window {
 
         public MainWindow (Gtk.Application application) {
             Object (
                 application: application,
                 border_width: 1,
-                icon_name: "com.github.plugarut.wingpanel-monitor",
-                resizable: false, title: "Wingpanel Monitor",
+                icon_name: "com.github.casasfernando.wingpanel-indicator-sysmon",
+                resizable: false, title: "Wingpanel System Monitor",
                 window_position: Gtk.WindowPosition.CENTER,
                 default_width: 300
                 );
         }
 
         construct {
-            var settings = new GLib.Settings ("com.github.plugarut.wingpanel-monitor");
+            var settings = new GLib.Settings ("com.github.casasfernando.wingpanel-indicator-sysmon");
             var toggles = new TogglesWidget (settings);
 
             var layout = new Gtk.Grid ();

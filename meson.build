@@ -1,4 +1,4 @@
-project('com.github.plugarut.wingpanel-monitor', 'vala', 'c')
+project('com.github.casasfernando.wingpanel-indicator-sysmon', 'vala', 'c')
 
 gnome = import('gnome')
 i18n = import('i18n')
