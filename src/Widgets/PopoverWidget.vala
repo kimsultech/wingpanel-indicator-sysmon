@@ -62,7 +62,7 @@ namespace WingpanelSystemMonitor {
 
 
             add (title_label);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (cpu_freq);
             add (ram);
             add (swap);
@@ -71,7 +71,7 @@ namespace WingpanelSystemMonitor {
             add (network_down);
             add (disk_read);
             add (disk_write);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (settings_button);
         }
 

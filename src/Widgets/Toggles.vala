@@ -57,14 +57,14 @@ namespace WingpanelSystemMonitor {
             settings.bind ("icon-only", icon_only_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             add (indicator);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (icon_only_switch);
             add (cpu_switch);
             add (ram_switch);
             add (network_switch);
             add (disk_switch);
             add (workspace_switch);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         }
     }
 }
