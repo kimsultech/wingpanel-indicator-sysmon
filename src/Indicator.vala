@@ -35,6 +35,8 @@ namespace WingpanelSystemMonitor {
 
         private static GLib.Settings settings;
 
+        public int cpu_usage;
+
         public Indicator (Wingpanel.IndicatorManager.ServerType server_type) {
             Object (
                 code_name: APPNAME,
@@ -93,7 +95,8 @@ namespace WingpanelSystemMonitor {
             if (display_widget != null) {
                 Timeout.add_seconds (1, () => {
                     display_widget.update_workspace ((int)screen.get_current_desktop () + 1);
-                    display_widget.update_cpu (cpu_data.percentage_used);
+                    cpu_usage = cpu_data.percentage_used;
+                    display_widget.update_cpu (cpu_usage);
                     display_widget.update_memory (memory_data.percentage_used);
                     var net = network_data.get_bytes ();
                     display_widget.update_network (net[0], net[1]);
@@ -107,7 +110,7 @@ namespace WingpanelSystemMonitor {
 
         private void update_popover_widget_data () {
             if (popover_widget == null) return;
-            popover_widget.update_cpu_frequency (cpu_data.frequency);
+            popover_widget.update_cpu (cpu_usage, cpu_data.frequency);
             popover_widget.update_uptime (system_data.uptime);
             popover_widget.update_ram (memory_data.used, memory_data.total);
             popover_widget.update_swap (memory_data.used_swap, memory_data.total_swap);
@@ -123,7 +126,7 @@ public Wingpanel.Indicator ? get_indicator (Module module, Wingpanel.IndicatorMa
     debug ("wingpanel-indicator-sysmon: loading system monitor indicator");
 
     if (server_type != Wingpanel.IndicatorManager.ServerType.SESSION) {
-        debug ("Wingpanel is not in session, not loading wingpanel-indicator-sysmon indicator");
+        debug ("wingpanel-indicator-sysmon: Wingpanel is not in session, not loading wingpanel-indicator-sysmon indicator");
         return null;
     }
 

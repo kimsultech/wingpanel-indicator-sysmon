@@ -21,7 +21,7 @@
 
 namespace WingpanelSystemMonitor {
     public class PopoverWidget : Gtk.Grid {
-        private PopoverWidgetRow cpu_freq;
+        private PopoverWidgetRow cpu;
         private PopoverWidgetRow uptime;
         private PopoverWidgetRow network_down;
         private PopoverWidgetRow network_up;
@@ -41,7 +41,7 @@ namespace WingpanelSystemMonitor {
             orientation = Gtk.Orientation.VERTICAL;
             column_spacing = 4;
 
-            cpu_freq = new PopoverWidgetRow ("Frequency", "0", 4);
+            cpu = new PopoverWidgetRow ("CPU", "0", 4);
             uptime = new PopoverWidgetRow ("Uptime", "0", 4);
             network_down = new PopoverWidgetRow ("Network Down", "0", 4);
             network_up = new PopoverWidgetRow ("Network Up", "0", 4);
@@ -63,7 +63,7 @@ namespace WingpanelSystemMonitor {
 
             add (title_label);
             add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-            add (cpu_freq);
+            add (cpu);
             add (ram);
             add (swap);
             add (uptime);
@@ -86,9 +86,9 @@ namespace WingpanelSystemMonitor {
             }
         }
 
-        public void update_cpu_frequency (double val) {
-            var formated_value = Utils.format_frequency (val);
-            cpu_freq.label_value = formated_value;
+        public void update_cpu (int cpuper, double cpufreq) {
+            var cpuf = Utils.format_frequency (cpufreq);
+            cpu.label_value = "%s / %s".printf(cpuper.to_string () + "%", cpuf);
         }
 
         public void update_uptime (string val) {
