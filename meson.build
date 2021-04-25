@@ -57,7 +57,7 @@ executable(
 )
 
 shared_module(
-    'wingpanel-monitor',
+    'wingpanel-indicator-sysmon',
     'src/Indicator.vala',
     'src/Widgets/DisplayWidget.vala',
     'src/Widgets/PopoverWidget.vala',
