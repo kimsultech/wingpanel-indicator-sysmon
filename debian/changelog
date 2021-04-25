@@ -1,3 +1,15 @@
+wingpanel-indicator-sysmon (0.5.0) bionic; urgency=medium
+
+  * Updated Debian package copyright file to fix license and copyright information
+  * Added load average information to popover widget
+  * Fixed an issue that on occasions caused the information in the indicator and the popover to be out of sync
+  * Added CPU usage information to popover widget
+  * UI minor updates
+  * Project references renamed to wingpanel-indicator-sysmon
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Mon, 26 Apr 2021 00:21:00 +0200
+
 wingpanel-indicator-sysmon (0.4.0) bionic; urgency=medium
 
   * Updated screenshot
@@ -17,9 +29,9 @@ wingpanel-indicator-sysmon (0.3.0) bionic; urgency=medium
 
 wingpanel-indicator-sysmon (0.2.0) bionic; urgency=medium
 
-  * Project forked from https://github.com/PlugaruT/wingpanel-monitor.
-  * Project renamed to wingpanel-indicator-sysmon
   * Network widget redesign.
+  * Project renamed to wingpanel-indicator-sysmon
+  * Project forked from https://github.com/PlugaruT/wingpanel-monitor.
 
 
  -- Fernando Casas Schössow <casasfernando@outlook.com>  Fri, 09 Apr 2021 18:05:00 +0200
