@@ -36,6 +36,8 @@ namespace WingpanelSystemMonitor {
         private static GLib.Settings settings;
 
         public int cpu_usage;
+        public int[] net_usage;
+        public int[] disk_usage;
 
         public Indicator (Wingpanel.IndicatorManager.ServerType server_type) {
             Object (
@@ -98,10 +100,10 @@ namespace WingpanelSystemMonitor {
                     cpu_usage = cpu_data.percentage_used;
                     display_widget.update_cpu (cpu_usage);
                     display_widget.update_memory (memory_data.percentage_used);
-                    var net = network_data.get_bytes ();
-                    display_widget.update_network (net[0], net[1]);
-                    var disk = disk_data.get_bytes ();
-                    display_widget.update_disk (disk[0], disk[1]);
+                    net_usage = network_data.get_bytes ();
+                    display_widget.update_network (net_usage[0], net_usage[1]);
+                    disk_usage = disk_data.get_bytes ();
+                    display_widget.update_disk (disk_usage[0], disk_usage[1]);
                     update_popover_widget_data ();
                     return true;
                 });
@@ -114,10 +116,8 @@ namespace WingpanelSystemMonitor {
             popover_widget.update_uptime (system_data.uptime);
             popover_widget.update_ram (memory_data.used, memory_data.total);
             popover_widget.update_swap (memory_data.used_swap, memory_data.total_swap);
-            var net = network_data.get_bytes ();
-            popover_widget.update_network (net[0], net[1]);
-            var disk = disk_data.get_bytes ();
-            popover_widget.update_disk (disk[0], disk[1]);
+            popover_widget.update_network (net_usage[0], net_usage[1]);
+            popover_widget.update_disk (disk_usage[0], disk_usage[1]);
         }
 
     }
