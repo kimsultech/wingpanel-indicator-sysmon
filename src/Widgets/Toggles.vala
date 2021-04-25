@@ -37,7 +37,7 @@ namespace WingpanelSystemMonitor {
         construct {
             orientation = Gtk.Orientation.VERTICAL;
 
-            icon_only_switch = new Wingpanel.Widgets.Switch ("Show icon", settings.get_boolean ("icon-only"));
+            icon_only_switch = new Wingpanel.Widgets.Switch ("Show indicator icon only", settings.get_boolean ("icon-only"));
             cpu_switch = new Wingpanel.Widgets.Switch ("CPU usage", settings.get_boolean ("show-cpu"));
             ram_switch = new Wingpanel.Widgets.Switch ("RAM usage", settings.get_boolean ("show-ram"));
             network_switch = new Wingpanel.Widgets.Switch ("Network usage", settings.get_boolean ("show-network"));
@@ -57,8 +57,8 @@ namespace WingpanelSystemMonitor {
             settings.bind ("icon-only", icon_only_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             add (indicator);
-            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (icon_only_switch);
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (cpu_switch);
             add (ram_switch);
             add (network_switch);
