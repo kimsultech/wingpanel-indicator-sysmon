@@ -22,6 +22,11 @@
 namespace WingpanelSystemMonitor {
     public class System : GLib.Object {
         private string _uptime;
+        private string _loadavg;
+
+        public string loadavg {
+            get { update_loadavg (); return _loadavg; }
+        }
 
         public string uptime {
             get { update_uptime (); return _uptime; }
@@ -31,6 +36,13 @@ namespace WingpanelSystemMonitor {
         }
 
         construct { }
+
+        private void update_loadavg () {
+            GTop.LoadAvg loadavg;
+            GTop.get_loadavg (out loadavg);
+
+            _loadavg = "%.2f, %.2f, %.2f".printf (loadavg.loadavg[0], loadavg.loadavg[1], loadavg.loadavg[2]);
+        }
 
         private void update_uptime () {
             GTop.Uptime uptime;

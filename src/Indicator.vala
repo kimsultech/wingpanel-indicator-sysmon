@@ -113,9 +113,10 @@ namespace WingpanelSystemMonitor {
         private void update_popover_widget_data () {
             if (popover_widget == null) return;
             popover_widget.update_cpu (cpu_usage, cpu_data.frequency);
-            popover_widget.update_uptime (system_data.uptime);
             popover_widget.update_ram (memory_data.used, memory_data.total);
             popover_widget.update_swap (memory_data.used_swap, memory_data.total_swap);
+            popover_widget.update_uptime (system_data.uptime);
+            popover_widget.update_load_average (system_data.loadavg);
             popover_widget.update_network (net_usage[0], net_usage[1]);
             popover_widget.update_disk (disk_usage[0], disk_usage[1]);
         }
