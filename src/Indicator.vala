@@ -98,7 +98,7 @@ namespace WingpanelSystemMonitor {
         private void update_display_widget_data () {
             if (display_widget != null) {
                 Timeout.add_seconds (1, () => {
-                    display_widget.update_workspace ((int)screen.get_current_desktop () + 1);
+                    display_widget.update_icon ();
                     cpu_usage = cpu_data.percentage_used;
                     display_widget.update_cpu (cpu_usage);
                     display_widget.update_memory (memory_data.percentage_used);
@@ -106,6 +106,7 @@ namespace WingpanelSystemMonitor {
                     display_widget.update_network (net_usage[0], net_usage[1]);
                     disk_usage = disk_data.get_bytes ();
                     display_widget.update_disk (disk_usage[0], disk_usage[1]);
+                    display_widget.update_workspace ((int)screen.get_current_desktop () + 1);
                     update_popover_widget_data ();
                     return true;
                 });

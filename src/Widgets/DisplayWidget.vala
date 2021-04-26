@@ -43,20 +43,11 @@ namespace WingpanelSystemMonitor {
 
             cpu_info = new IndicatorWidget ("cpu-symbolic", 4);
             ram_info = new IndicatorWidget ("ram-symbolic", 4);
+            network_info = new NetworkWidget ();
+            disk_info = new DiskWidget ();
             workspace_info = new IndicatorWidget ("computer-symbolic", 2);
             icon_only = new IndicatorWidget ("utilities-system-monitor-symbolic", 0);
             icon_only.label_value = "";
-
-            network_info = new NetworkWidget ();
-
-            disk_info = new DiskWidget ();
-
-            settings.bind ("show-cpu", cpu_info, "display", SettingsBindFlags.GET);
-            settings.bind ("show-ram", ram_info, "display", SettingsBindFlags.GET);
-            settings.bind ("show-disk", disk_info, "display", SettingsBindFlags.GET);
-            settings.bind ("show-network", network_info, "display", SettingsBindFlags.GET);
-            settings.bind ("show-workspace", workspace_info, "display", SettingsBindFlags.GET);
-            settings.bind ("icon-only", icon_only, "display", SettingsBindFlags.GET);
 
             add (icon_only);
             add (cpu_info);
@@ -66,28 +57,66 @@ namespace WingpanelSystemMonitor {
             add (workspace_info);
         }
 
-        public void update_workspace (int val) {
-            workspace_info.label_value = val.to_string ();
+        public void set_widget_visible (Gtk.Widget widget, bool visible) {
+            widget.no_show_all = !visible;
+            widget.visible = visible;
+        }
+
+        public void update_icon () {
+            if (settings.get_boolean ("icon-only")) {
+                set_widget_visible (icon_only, true);
+            } else {
+                set_widget_visible (icon_only, false);
+            }
         }
 
         public void update_cpu (int val) {
+            if (settings.get_boolean ("icon-only") || !settings.get_boolean ("show-cpu")) {
+                set_widget_visible (cpu_info, false);
+            } else {
+                set_widget_visible (cpu_info, true);
+            }
             cpu_info.label_value = val.to_string () + "%";
         }
 
         public void update_memory (int val) {
+            if (settings.get_boolean ("icon-only") || !settings.get_boolean ("show-ram")) {
+                set_widget_visible (ram_info, false);
+            } else {
+                set_widget_visible (ram_info, true);
+            }
             ram_info.label_value = val.to_string () + "%";
         }
 
         public void update_network (int upload, int download) {
+            if (settings.get_boolean ("icon-only") || !settings.get_boolean ("show-network")) {
+                set_widget_visible (network_info, false);
+            } else {
+                set_widget_visible (network_info, true);
+            }
             string up = WingpanelSystemMonitor.Utils.format_net_speed (upload, true, false);
             string down = WingpanelSystemMonitor.Utils.format_net_speed (download, true, false);
             network_info.update_label_data (up, down);
         }
 
         public void update_disk (int read, int write) {
+            if (settings.get_boolean ("icon-only") || !settings.get_boolean ("show-disk")) {
+                set_widget_visible (disk_info, false);
+            } else {
+                set_widget_visible (disk_info, true);
+            }
             string read_s = WingpanelSystemMonitor.Utils.format_net_speed (read, true, false);
             string write_s = WingpanelSystemMonitor.Utils.format_net_speed (write, true, false);
             disk_info.update_label_data (read_s, write_s);
+        }
+
+        public void update_workspace (int val) {
+            if (settings.get_boolean ("icon-only") || !settings.get_boolean ("show-workspace")) {
+                set_widget_visible (workspace_info, false);
+            } else {
+                set_widget_visible (workspace_info, true);
+            }
+            workspace_info.label_value = val.to_string ();
         }
 
     }
