@@ -23,6 +23,7 @@
 
 namespace WingpanelSystemMonitor {
     public class TogglesWidget : Gtk.Grid {
+        private Gtk.Separator settings_separator;
         private Wingpanel.Widgets.Switch cpu_switch;
         private Wingpanel.Widgets.Switch ram_switch;
         private Wingpanel.Widgets.Switch network_switch;
@@ -40,33 +41,39 @@ namespace WingpanelSystemMonitor {
             orientation = Gtk.Orientation.VERTICAL;
 
             icon_only_switch = new Wingpanel.Widgets.Switch ("Show indicator icon only", settings.get_boolean ("icon-only"));
+            settings_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
             cpu_switch = new Wingpanel.Widgets.Switch ("CPU usage", settings.get_boolean ("show-cpu"));
             ram_switch = new Wingpanel.Widgets.Switch ("RAM usage", settings.get_boolean ("show-ram"));
             network_switch = new Wingpanel.Widgets.Switch ("Network usage", settings.get_boolean ("show-network"));
             disk_switch = new Wingpanel.Widgets.Switch ("Disk usage", settings.get_boolean ("show-disk"));
-            workspace_switch = new Wingpanel.Widgets.Switch (
-                "Workspace number", settings.get_boolean ("show-workspace")
-                );
+            workspace_switch = new Wingpanel.Widgets.Switch ("Workspace number", settings.get_boolean ("show-workspace"));
             indicator = new Wingpanel.Widgets.Switch ("Show indicator", settings.get_boolean ("display-indicator"));
 
             settings.bind ("display-indicator", indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
+            settings.bind ("icon-only", icon_only_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-cpu", cpu_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-ram", ram_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-network", network_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-disk", disk_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-workspace", workspace_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("icon-only", icon_only_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
+
+            settings.bind ("icon-only", settings_separator, "visible", SettingsBindFlags.INVERT_BOOLEAN);
+            settings.bind ("icon-only", cpu_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
+            settings.bind ("icon-only", ram_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
+            settings.bind ("icon-only", network_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
+            settings.bind ("icon-only", disk_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
+            settings.bind ("icon-only", workspace_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
 
             add (indicator);
             add (icon_only_switch);
-            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+            add (settings_separator);
             add (cpu_switch);
             add (ram_switch);
             add (network_switch);
             add (disk_switch);
             add (workspace_switch);
-            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+
         }
     }
 }
