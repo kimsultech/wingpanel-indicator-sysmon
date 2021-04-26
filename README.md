@@ -3,9 +3,13 @@
 </p>
 <h1 align="center">Wingpanel System Monitor</h1>
 
-![Screenshot](data/screenshot_1.png) ![Screenshot](data/screenshot_2.png)
-### Settings:
+### Indicator:
+![Screenshot](data/screenshot_1.png)
+### Popover:
+![Screenshot](data/screenshot_2.png)
 ![Screenshot](data/screenshot_3.png)
+### Settings:
+![Screenshot](data/screenshot_4.png)
 
 ## Building and Installation
 
