@@ -1,3 +1,11 @@
+wingpanel-indicator-sysmon (0.5.2) bionic; urgency=medium
+
+  * Fixed a bug in uptime presentation
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Mon, 26 Apr 2021 20:02:00 +0200
+
+
 wingpanel-indicator-sysmon (0.5.1) bionic; urgency=medium
 
   * Minor UI changes in the application settings window
