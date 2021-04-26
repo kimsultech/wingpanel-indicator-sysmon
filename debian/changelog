@@ -1,3 +1,13 @@
+wingpanel-indicator-sysmon (0.5.1) bionic; urgency=medium
+
+  * Minor UI changes in the application settings window
+  * Changed show indicator icon only behavior
+  * Changed uptime presentation when uptime is bigger than 24 hours
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Mon, 26 Apr 2021 18:21:00 +0200
+
+
 wingpanel-indicator-sysmon (0.5.0) bionic; urgency=medium
 
   * Updated Debian package copyright file to fix license and copyright information
