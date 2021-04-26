@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Capa_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 512 512"
+   xml:space="preserve"
+   sodipodi:docname="net-symbolic-alt-1.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   width="512"
+   height="512"><title
+   id="title848">Network (Alternative 1)</title><metadata
+   id="metadata338"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title>Network (Alternative 1)</dc:title><cc:license
+         rdf:resource="http://creativecommons.org/licenses/by-nc-sa/4.0/" /><dc:creator><cc:Agent><dc:title>Fernando Casas Schössow</dc:title></cc:Agent></dc:creator><dc:publisher><cc:Agent><dc:title>Fernando Casas Schössow</dc:title></cc:Agent></dc:publisher><dc:date>26/04/2021</dc:date></cc:Work><cc:License
+       rdf:about="http://creativecommons.org/licenses/by-nc-sa/4.0/"><cc:permits
+         rdf:resource="http://creativecommons.org/ns#Reproduction" /><cc:permits
+         rdf:resource="http://creativecommons.org/ns#Distribution" /><cc:requires
+         rdf:resource="http://creativecommons.org/ns#Notice" /><cc:requires
+         rdf:resource="http://creativecommons.org/ns#Attribution" /><cc:prohibits
+         rdf:resource="http://creativecommons.org/ns#CommercialUse" /><cc:permits
+         rdf:resource="http://creativecommons.org/ns#DerivativeWorks" /><cc:requires
+         rdf:resource="http://creativecommons.org/ns#ShareAlike" /></cc:License></rdf:RDF></metadata><defs
+   id="defs336" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1239"
+   inkscape:window-height="801"
+   id="namedview334"
+   showgrid="false"
+   inkscape:zoom="1.5772152"
+   inkscape:cx="133.86463"
+   inkscape:cy="268.04799"
+   inkscape:window-x="340"
+   inkscape:window-y="123"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="g301"
+   inkscape:document-rotation="0" />
+<g
+   id="g301">
+	<path
+   d="M 170.69505,69.8902 C 169.20474,68.08886 166.63528,67 163.87678,67 c -2.76007,0 -5.32795,1.08886 -6.81827,2.8902 L 57.28302,190.51479 c -1.723473,2.08364 -1.709294,4.75752 0.03466,6.82894 1.743952,2.0714 4.897875,3.15538 8.045497,2.77165 h 62.514463 v 133.71909 c 0,3.10528 3.24529,5.62153 7.24835,5.62153 h 57.50159 c 4.00306,0 7.24677,-2.51746 7.24677,-5.62153 V 200.11538 l 62.5129,0.001 c 0.4222,0.0514 0.84598,0.077 1.26503,0.077 2.70652,0 5.27125,-1.05464 6.78204,-2.84865 1.74395,-2.07264 1.75813,-4.74652 0.0347,-6.82894 z"
+   id="path295"
+   inkscape:transform-center-x="6.9918198"
+   inkscape:transform-center-y="9.2978037"
+   sodipodi:nodetypes="csccsccssssccsccc"
+   style="stroke-width:1.38753" />
+	<path
+   d="M 446.63525,311.88584 H 384.12079 V 178.16553 c 0,-3.10528 -3.2453,-5.62153 -7.24678,-5.62153 h -57.50159 c -4.00305,0 -7.24835,2.51746 -7.24835,5.62153 v 133.71909 h -62.51289 c -3.1492,-0.37884 -6.30155,0.70025 -8.0455,2.77165 -1.74395,2.07264 -1.75813,4.74653 -0.0347,6.82894 l 99.77393,120.62459 c 1.49031,1.80133 4.05977,2.8902 6.81827,2.8902 2.7585,0 5.32795,-1.08887 6.81827,-2.8902 l 99.77553,-120.62459 c 1.72348,-2.08364 1.7093,-4.75752 -0.0346,-6.82894 -1.74553,-2.0714 -4.8963,-3.15294 -8.04708,-2.77043 z"
+   id="path297"
+   sodipodi:nodetypes="ccsssscccccscccc"
+   style="stroke-width:1.38752" />
+	<path
+   d="M 405.71269,0 H 106.28731 C 47.68081,0 0,47.679515 0,106.28602 V 405.69973 C 0,464.31401 47.68081,512 106.28731,512 H 405.71269 C 464.3205,512 512,464.31401 512,405.69973 V 106.28602 C 512,47.679515 464.3205,0 405.71269,0 Z M 482.557,405.69973 c 0,37.74906 -39.10172,76.85727 -76.84431,76.85727 H 106.28731 C 68.546009,482.557 29.443,443.44879 29.443,405.69973 V 106.28602 C 29.443,68.544713 68.546009,29.443 106.28731,29.443 h 299.42538 c 37.74259,0 76.84431,39.101723 76.84431,76.84302 z"
+   id="path299"
+   style="stroke-width:1.2962"
+   sodipodi:nodetypes="ssssssssssssssssss" />
+</g>
+<g
+   id="g303">
+</g>
+<g
+   id="g305">
+</g>
+<g
+   id="g307">
+</g>
+<g
+   id="g309">
+</g>
+<g
+   id="g311">
+</g>
+<g
+   id="g313">
+</g>
+<g
+   id="g315">
+</g>
+<g
+   id="g317">
+</g>
+<g
+   id="g319">
+</g>
+<g
+   id="g321">
+</g>
+<g
+   id="g323">
+</g>
+<g
+   id="g325">
+</g>
+<g
+   id="g327">
+</g>
+<g
+   id="g329">
+</g>
+<g
+   id="g331">
+</g>
+</svg>
