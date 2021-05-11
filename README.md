@@ -3,6 +3,38 @@
 </p>
 <h1 align="center">Wingpanel System Monitor</h1>
 
+## About
+
+Wingpanel System Monitor is a status indicator that displays current system resources usage information in elementary OS Wingpanel.
+
+Being this one of my first Vala applications I'm sure that the code can be improved, so:
+
+- If you find any problems while running the application please report it through an issue.
+- Pull requests are welcome.
+- Feedback and suggestions are always welcome as well.
+
+### Features:
+
+- Displays the following system resources information:
+
+    - CPU usage
+    - RAM memory usage
+    - Network throughput
+    - Disk throughput
+    - Current workspace number
+
+- Additionally in the popover it displays the following information:
+
+    - Swap memory usage
+    - System uptime
+    - System load average
+
+### Requirements
+
+- elementary OS 5.1.7 Hera
+
+## Screenshots
+
 ### Indicator:
 ![Screenshot](data/screenshot_1.png)
 ### Popover:
@@ -11,7 +43,7 @@
 ### Settings:
 ![Screenshot](data/screenshot_4.png)
 
-## Building and Installation
+## Building and installation from source
 
 You'll need the following dependencies:
 
@@ -45,6 +77,14 @@ To install, use `ninja install`
 sudo ninja install
 com.github.casasfernando.wingpanel-indicator-sysmon
 ```
+
+## Installation using the deb package
+
+You can also find a deb package available with every release in the releases page.
+To install it you just need to download it and run:
+
+```
+sudo dpkg -i wingpanel-indicator-sysmon_<release>_amd64.deb
 
 ## Special thanks and credits
  - [Plugaru T.](https://github.com/PlugaruT/) for developing the [original project](https://github.com/PlugaruT/wingpanel-monitor).
