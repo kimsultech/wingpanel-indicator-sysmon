@@ -58,15 +58,7 @@ namespace WingpanelSystemMonitor {
             settings_button.text = _ ("Open Settings…");
             settings_button.clicked.connect (open_settings);
 
-            var title_label = new Gtk.Label ("Wingpanel System Monitor");
-            title_label.halign = Gtk.Align.CENTER;
-            title_label.hexpand = true;
-            title_label.margin_start = 9;
-            title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-
-            add (title_label);
-            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (cpu);
             add (ram);
             add (swap);
