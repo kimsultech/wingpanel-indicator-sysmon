@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Wingpanel System Monitor
 GenericName=Wingpanel System Monitor
-Comment=Display system resources usage information in Wingpanel
+Comment=Display current system resources usage information in elementary OS Wingpanel
 Categories=System;Utility;
 Exec=com.github.casasfernando.wingpanel-indicator-sysmon
 Icon=com.github.casasfernando.wingpanel-indicator-sysmon
