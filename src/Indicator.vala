@@ -29,6 +29,7 @@ namespace WingpanelSystemMonitor {
         private PopoverWidget popover_widget;
 
         private CPU cpu_data;
+        private CPUTemperature cpu_temp_data;
         private Memory memory_data;
         private Network network_data;
         private Disk disk_data;
@@ -38,6 +39,7 @@ namespace WingpanelSystemMonitor {
         private static GLib.Settings settings;
 
         public int cpu_usage;
+        public int cpu_temp;
         public int[] net_usage;
         public int[] disk_usage;
 
@@ -60,6 +62,7 @@ namespace WingpanelSystemMonitor {
 
             Gtk.IconTheme.get_default ().add_resource_path ("/com/github/casasfernando/wingpanel-indicator-sysmon/icons");
             cpu_data = new CPU ();
+            cpu_temp_data = new CPUTemperature ();
             memory_data = new Memory ();
             network_data = new Network ();
             disk_data = new Disk ();
@@ -101,6 +104,8 @@ namespace WingpanelSystemMonitor {
                     display_widget.update_icon ();
                     cpu_usage = cpu_data.percentage_used;
                     display_widget.update_cpu (cpu_usage);
+                    cpu_temp = cpu_temp_data.cpu_temperature;
+                    display_widget.update_cpu_temp (cpu_temp);
                     display_widget.update_memory (memory_data.percentage_used);
                     net_usage = network_data.get_bytes ();
                     display_widget.update_network (net_usage[0], net_usage[1]);
@@ -116,6 +121,7 @@ namespace WingpanelSystemMonitor {
         private void update_popover_widget_data () {
             if (popover_widget == null) return;
             popover_widget.update_cpu (cpu_usage, cpu_data.frequency);
+            popover_widget.update_cpu_temp (cpu_temp);
             popover_widget.update_ram (memory_data.used, memory_data.total);
             popover_widget.update_swap (memory_data.used_swap, memory_data.total_swap);
             popover_widget.update_uptime (system_data.uptime);

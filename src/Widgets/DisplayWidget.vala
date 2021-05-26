@@ -25,6 +25,7 @@
 namespace WingpanelSystemMonitor {
     public class DisplayWidget : Gtk.Grid {
         private IndicatorWidget cpu_info;
+        private IndicatorWidget cpu_temp_info;
         private IndicatorWidget ram_info;
         private IndicatorWidget workspace_info;
         private IndicatorWidget icon_only;
@@ -42,6 +43,7 @@ namespace WingpanelSystemMonitor {
 
 
             cpu_info = new IndicatorWidget ("cpu-symbolic", 4);
+            cpu_temp_info = new IndicatorWidget ("cpu-temperature-symbolic", 4);
             ram_info = new IndicatorWidget ("ram-symbolic", 4);
             network_info = new NetworkWidget ();
             disk_info = new DiskWidget ();
@@ -51,6 +53,7 @@ namespace WingpanelSystemMonitor {
 
             add (icon_only);
             add (cpu_info);
+            add (cpu_temp_info);
             add (ram_info);
             add (network_info);
             add (disk_info);
@@ -77,6 +80,19 @@ namespace WingpanelSystemMonitor {
                 set_widget_visible (cpu_info, true);
             }
             cpu_info.label_value = val.to_string () + "%";
+        }
+
+        public void update_cpu_temp (int val) {
+            if (settings.get_boolean ("icon-only") || !settings.get_boolean ("show-cpu-temp")) {
+                set_widget_visible (cpu_temp_info, false);
+            } else {
+                set_widget_visible (cpu_temp_info, true);
+            }
+            if (val == 777) {
+                cpu_temp_info.label_value = "N/A";
+            } else {
+                cpu_temp_info.label_value = val.to_string () + "ºC";
+            }
         }
 
         public void update_memory (int val) {

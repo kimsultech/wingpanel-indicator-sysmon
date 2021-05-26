@@ -24,6 +24,7 @@
 namespace WingpanelSystemMonitor {
     public class PopoverWidget : Gtk.Grid {
         private PopoverWidgetRow cpu;
+        private PopoverWidgetRow cpu_temp;
         private PopoverWidgetRow ram;
         private PopoverWidgetRow swap;
         private PopoverWidgetRow uptime;
@@ -45,6 +46,7 @@ namespace WingpanelSystemMonitor {
             column_spacing = 4;
 
             cpu = new PopoverWidgetRow ("CPU", "0", 4);
+            cpu_temp = new PopoverWidgetRow ("CPU Temperature", "0", 4);
             ram = new PopoverWidgetRow ("RAM", "0", 4);
             swap = new PopoverWidgetRow ("Swap", "0", 4);
             uptime = new PopoverWidgetRow ("Uptime", "0", 4);
@@ -60,6 +62,7 @@ namespace WingpanelSystemMonitor {
 
 
             add (cpu);
+            add (cpu_temp);
             add (ram);
             add (swap);
             add (uptime);
@@ -86,6 +89,14 @@ namespace WingpanelSystemMonitor {
         public void update_cpu (int cpuper, double cpufreq) {
             var cpuf = Utils.format_frequency (cpufreq);
             cpu.label_value = "%s / %s".printf(cpuper.to_string () + "%", cpuf);
+        }
+
+        public void update_cpu_temp (int cputemp) {
+            if (cputemp == 777) {
+                cpu_temp.label_value = "N/A";
+            } else {
+                cpu_temp.label_value = cputemp.to_string ().concat ("ºC");
+            }
         }
 
         public void update_ram (double used_ram, double total_ram) {

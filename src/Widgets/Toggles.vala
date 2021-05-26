@@ -25,6 +25,7 @@ namespace WingpanelSystemMonitor {
     public class TogglesWidget : Gtk.Grid {
         private Gtk.Separator settings_separator;
         private Wingpanel.Widgets.Switch cpu_switch;
+        private Wingpanel.Widgets.Switch cpu_temp_switch;
         private Wingpanel.Widgets.Switch ram_switch;
         private Wingpanel.Widgets.Switch network_switch;
         private Wingpanel.Widgets.Switch disk_switch;
@@ -43,6 +44,7 @@ namespace WingpanelSystemMonitor {
             icon_only_switch = new Wingpanel.Widgets.Switch ("Show indicator icon only", settings.get_boolean ("icon-only"));
             settings_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
             cpu_switch = new Wingpanel.Widgets.Switch ("CPU usage", settings.get_boolean ("show-cpu"));
+            cpu_temp_switch = new Wingpanel.Widgets.Switch ("CPU temperature", settings.get_boolean ("show-cpu-temp"));
             ram_switch = new Wingpanel.Widgets.Switch ("RAM usage", settings.get_boolean ("show-ram"));
             network_switch = new Wingpanel.Widgets.Switch ("Network usage", settings.get_boolean ("show-network"));
             disk_switch = new Wingpanel.Widgets.Switch ("Disk usage", settings.get_boolean ("show-disk"));
@@ -53,6 +55,7 @@ namespace WingpanelSystemMonitor {
 
             settings.bind ("icon-only", icon_only_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-cpu", cpu_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("show-cpu-temp", cpu_temp_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-ram", ram_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-network", network_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-disk", disk_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
@@ -60,6 +63,7 @@ namespace WingpanelSystemMonitor {
 
             settings.bind ("icon-only", settings_separator, "visible", SettingsBindFlags.INVERT_BOOLEAN);
             settings.bind ("icon-only", cpu_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
+            settings.bind ("icon-only", cpu_temp_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
             settings.bind ("icon-only", ram_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
             settings.bind ("icon-only", network_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
             settings.bind ("icon-only", disk_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
@@ -69,6 +73,7 @@ namespace WingpanelSystemMonitor {
             add (icon_only_switch);
             add (settings_separator);
             add (cpu_switch);
+            add (cpu_temp_switch);
             add (ram_switch);
             add (network_switch);
             add (disk_switch);
