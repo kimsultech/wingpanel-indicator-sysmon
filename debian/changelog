@@ -1,3 +1,14 @@
+wingpanel-indicator-sysmon (0.6.0) bionic; urgency=medium
+
+  * Added support to display CPU temperature
+  * Updated application desktop file
+  * Updated README file
+  * Minor UI changes
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Wed, 26 May 2021 22:50:00 +0200
+
+
 wingpanel-indicator-sysmon (0.5.2) bionic; urgency=medium
 
   * Fixed a bug in uptime presentation
