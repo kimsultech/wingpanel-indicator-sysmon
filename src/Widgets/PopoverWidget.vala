@@ -87,7 +87,12 @@ namespace WingpanelSystemMonitor {
         }
 
         public void update_cpu (int cpuper, double cpufreq) {
-            var cpuf = Utils.format_frequency (cpufreq);
+            string cpuf = "";
+            if (cpufreq > 0) {
+                cpuf = Utils.format_frequency (cpufreq);
+            } else {
+                cpuf = "N/A";
+            }
             cpu.label_value = "%s / %s".printf(cpuper.to_string () + "%", cpuf);
         }
 
