@@ -18,6 +18,7 @@ Being this one of my first Vala applications I'm sure that the code can be impro
 - Displays the following system resources information:
 
     - CPU usage
+    - CPU temperature
     - RAM memory usage
     - Network throughput
     - Disk throughput
