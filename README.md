@@ -86,6 +86,7 @@ To install it you just need to download it and run:
 
 ```
 sudo dpkg -i wingpanel-indicator-sysmon_<release>_amd64.deb
+```
 
 ## Special thanks and credits
  - [Plugaru T.](https://github.com/PlugaruT/) for developing the [original project](https://github.com/PlugaruT/wingpanel-monitor).
