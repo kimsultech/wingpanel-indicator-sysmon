@@ -51,9 +51,9 @@ namespace WingpanelSystemMonitor {
             cpu_temp_switch.set_active (settings.get_boolean ("show-cpu-temp"));
             ram_switch = new Granite.SwitchModelButton ("RAM usage");
             ram_switch.set_active (settings.get_boolean ("show-ram"));
-            network_switch = new Granite.SwitchModelButton ("Network usage");
+            network_switch = new Granite.SwitchModelButton ("Network throughput");
             network_switch.set_active (settings.get_boolean ("show-network"));
-            disk_switch = new Granite.SwitchModelButton ("Disk usage");
+            disk_switch = new Granite.SwitchModelButton ("Disk throughput");
             disk_switch.set_active (settings.get_boolean ("show-disk"));
             workspace_switch = new Granite.SwitchModelButton ("Workspace number");
             workspace_switch.set_active (settings.get_boolean ("show-workspace"));
