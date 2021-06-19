@@ -44,7 +44,7 @@ namespace WingpanelSystemMonitor {
             // Walkthrough each hwmon interface looking for a CPU temperature sensor
             while (hwmon_walk) {
                 string hwmon_if_path = "/sys/class/hwmon/hwmon".concat (hwmon_idx.to_string (), "/name");
-                if (!FileUtils.test (hwmon_if_path, FileUtils.EXISTS)) {
+                if (!FileUtils.test (hwmon_if_path, FileTest.EXISTS)) {
                     hwmon_walk = false;
                     continue;
                 }
@@ -65,7 +65,7 @@ namespace WingpanelSystemMonitor {
                     while (cpu_walk) {
                         string cpu_temp_sensor_label_path = "/sys/class/hwmon/hwmon".concat (hwmon_idx.to_string (), "/temp", core_idx.to_string (), "_label");
                         string cpu_temp_sensor_value_path = "/sys/class/hwmon/hwmon".concat (hwmon_idx.to_string (), "/temp", core_idx.to_string (), "_input");
-                        if (!FileUtils.test (cpu_temp_sensor_label_path, FileUtils.EXISTS) || !FileUtils.test (cpu_temp_sensor_value_path, FileUtils.EXISTS)) {
+                        if (!FileUtils.test (cpu_temp_sensor_label_path, FileTest.EXISTS) || !FileUtils.test (cpu_temp_sensor_value_path, FileTest.EXISTS)) {
                             cpu_walk = false;
                             continue;
                         }

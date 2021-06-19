@@ -24,14 +24,14 @@
 namespace WingpanelSystemMonitor {
     public class TogglesWidget : Gtk.Grid {
         private Gtk.Separator settings_separator;
-        private Wingpanel.Widgets.Switch cpu_switch;
-        private Wingpanel.Widgets.Switch cpu_temp_switch;
-        private Wingpanel.Widgets.Switch ram_switch;
-        private Wingpanel.Widgets.Switch network_switch;
-        private Wingpanel.Widgets.Switch disk_switch;
-        private Wingpanel.Widgets.Switch workspace_switch;
-        private Wingpanel.Widgets.Switch icon_only_switch;
-        private Wingpanel.Widgets.Switch indicator;
+        private Granite.SwitchModelButton cpu_switch;
+        private Granite.SwitchModelButton cpu_temp_switch;
+        private Granite.SwitchModelButton ram_switch;
+        private Granite.SwitchModelButton network_switch;
+        private Granite.SwitchModelButton disk_switch;
+        private Granite.SwitchModelButton workspace_switch;
+        private Granite.SwitchModelButton icon_only_switch;
+        private Granite.SwitchModelButton indicator;
         public unowned Settings settings { get; construct set; }
 
         public TogglesWidget (Settings settings) {
@@ -40,26 +40,35 @@ namespace WingpanelSystemMonitor {
 
         construct {
             orientation = Gtk.Orientation.VERTICAL;
+            row_spacing = 6;
 
-            icon_only_switch = new Wingpanel.Widgets.Switch ("Show indicator icon only", settings.get_boolean ("icon-only"));
+            icon_only_switch = new Granite.SwitchModelButton ("Show indicator icon only");
+            icon_only_switch.set_active (settings.get_boolean ("icon-only"));
             settings_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-            cpu_switch = new Wingpanel.Widgets.Switch ("CPU usage", settings.get_boolean ("show-cpu"));
-            cpu_temp_switch = new Wingpanel.Widgets.Switch ("CPU temperature", settings.get_boolean ("show-cpu-temp"));
-            ram_switch = new Wingpanel.Widgets.Switch ("RAM usage", settings.get_boolean ("show-ram"));
-            network_switch = new Wingpanel.Widgets.Switch ("Network usage", settings.get_boolean ("show-network"));
-            disk_switch = new Wingpanel.Widgets.Switch ("Disk usage", settings.get_boolean ("show-disk"));
-            workspace_switch = new Wingpanel.Widgets.Switch ("Workspace number", settings.get_boolean ("show-workspace"));
-            indicator = new Wingpanel.Widgets.Switch ("Show indicator", settings.get_boolean ("display-indicator"));
+            cpu_switch = new Granite.SwitchModelButton ("CPU usage");
+            cpu_switch.set_active (settings.get_boolean ("show-cpu"));
+            cpu_temp_switch = new Granite.SwitchModelButton ("CPU temperature");
+            cpu_temp_switch.set_active (settings.get_boolean ("show-cpu-temp"));
+            ram_switch = new Granite.SwitchModelButton ("RAM usage");
+            ram_switch.set_active (settings.get_boolean ("show-ram"));
+            network_switch = new Granite.SwitchModelButton ("Network usage");
+            network_switch.set_active (settings.get_boolean ("show-network"));
+            disk_switch = new Granite.SwitchModelButton ("Disk usage");
+            disk_switch.set_active (settings.get_boolean ("show-disk"));
+            workspace_switch = new Granite.SwitchModelButton ("Workspace number");
+            workspace_switch.set_active (settings.get_boolean ("show-workspace"));
+            indicator = new Granite.SwitchModelButton ("Show indicator");
+            indicator.set_active (settings.get_boolean ("display-indicator"));
 
-            settings.bind ("display-indicator", indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("display-indicator", indicator, "active", SettingsBindFlags.DEFAULT);
 
-            settings.bind ("icon-only", icon_only_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("show-cpu", cpu_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("show-cpu-temp", cpu_temp_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("show-ram", ram_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("show-network", network_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("show-disk", disk_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("show-workspace", workspace_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("icon-only", icon_only_switch, "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("show-cpu", cpu_switch, "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("show-cpu-temp", cpu_temp_switch, "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("show-ram", ram_switch, "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("show-network", network_switch, "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("show-disk", disk_switch, "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("show-workspace", workspace_switch, "active", SettingsBindFlags.DEFAULT);
 
             settings.bind ("icon-only", settings_separator, "visible", SettingsBindFlags.INVERT_BOOLEAN);
             settings.bind ("icon-only", cpu_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);

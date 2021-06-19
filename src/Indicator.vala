@@ -45,9 +45,7 @@ namespace WingpanelSystemMonitor {
 
         public Indicator (Wingpanel.IndicatorManager.ServerType server_type) {
             Object (
-                code_name: APPNAME,
-                display_name: "Wingpanel System Monitor",
-                description: "System monitor indicator for Wingpanel"
+                code_name: APPNAME
                 );
         }
 
