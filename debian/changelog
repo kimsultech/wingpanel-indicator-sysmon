@@ -1,3 +1,14 @@
+wingpanel-indicator-sysmon (0.6.4) focal; urgency=medium
+
+  * Updated README file
+  * Use libhandy for the settings window
+  * Fixed network throughput calculation doubling the real throughput value
+  * Fixed disk throughput calculation doubling the real throughput value
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Sun, 17 Oct 2021 23:25:00 +0200
+
+
 wingpanel-indicator-sysmon (0.6.3) focal; urgency=medium
 
   * Fixed the application opening a new settings window every time Open Settings is clicked
