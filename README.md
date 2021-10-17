@@ -57,6 +57,7 @@ libgranite-dev
 libgtk-3-dev
 libwingpanel-2.0-dev (Hera)
 libwingpanel-dev (Odin)
+libhandy-1-dev (Odin)
 meson
 valac
 ```
@@ -70,7 +71,7 @@ sudo apt install libgtop2-dev libgranite-dev libgtk-3-dev libwingpanel-2.0-dev m
 Or in **elementary OS Odin** running:
 
 ```
-sudo apt install libgtop2-dev libgranite-dev libgtk-3-dev libwingpanel-dev meson valac
+sudo apt install libgtop2-dev libgranite-dev libgtk-3-dev libwingpanel-dev libhandy-1-dev meson valac
 ```
 
 Run `meson` to configure the build environment and then `ninja` to build
