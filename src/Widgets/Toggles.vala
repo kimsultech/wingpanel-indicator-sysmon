@@ -42,22 +42,22 @@ namespace WingpanelSystemMonitor {
             orientation = Gtk.Orientation.VERTICAL;
             row_spacing = 6;
 
-            icon_only_switch = new Granite.SwitchModelButton ("Show indicator icon only");
+            icon_only_switch = new Granite.SwitchModelButton (_("Show indicator icon only"));
             icon_only_switch.set_active (settings.get_boolean ("icon-only"));
             settings_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-            cpu_switch = new Granite.SwitchModelButton ("CPU usage");
+            cpu_switch = new Granite.SwitchModelButton (_("CPU usage"));
             cpu_switch.set_active (settings.get_boolean ("show-cpu"));
-            cpu_temp_switch = new Granite.SwitchModelButton ("CPU temperature");
+            cpu_temp_switch = new Granite.SwitchModelButton (_("CPU temperature"));
             cpu_temp_switch.set_active (settings.get_boolean ("show-cpu-temp"));
-            ram_switch = new Granite.SwitchModelButton ("RAM usage");
+            ram_switch = new Granite.SwitchModelButton (_("RAM usage"));
             ram_switch.set_active (settings.get_boolean ("show-ram"));
-            network_switch = new Granite.SwitchModelButton ("Network throughput");
+            network_switch = new Granite.SwitchModelButton (_("Network throughput"));
             network_switch.set_active (settings.get_boolean ("show-network"));
-            disk_switch = new Granite.SwitchModelButton ("Disk throughput");
+            disk_switch = new Granite.SwitchModelButton (_("Disk throughput"));
             disk_switch.set_active (settings.get_boolean ("show-disk"));
-            workspace_switch = new Granite.SwitchModelButton ("Workspace number");
+            workspace_switch = new Granite.SwitchModelButton (_("Workspace number"));
             workspace_switch.set_active (settings.get_boolean ("show-workspace"));
-            indicator = new Granite.SwitchModelButton ("Show indicator");
+            indicator = new Granite.SwitchModelButton (_("Show indicator"));
             indicator.set_active (settings.get_boolean ("display-indicator"));
 
             settings.bind ("display-indicator", indicator, "active", SettingsBindFlags.DEFAULT);
