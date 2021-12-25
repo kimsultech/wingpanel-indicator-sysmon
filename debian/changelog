@@ -1,3 +1,14 @@
+wingpanel-indicator-sysmon (0.6.5) focal; urgency=medium
+
+  * Added support for translations
+  * Added spanish translation
+  * Improved meson build system
+  * Minor UI changes
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Sat, 25 Dec 2021 10:40:00 +0100
+
+
 wingpanel-indicator-sysmon (0.6.4) focal; urgency=medium
 
   * Updated README file
