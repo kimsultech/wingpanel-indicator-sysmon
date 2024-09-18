@@ -74,7 +74,7 @@ namespace WingpanelSystemMonitor {
                         FileUtils.get_contents (cpu_temp_sensor_label_path, out cpu_temp_sensor_label);
                         cpu_temp_sensor_label = cpu_temp_sensor_label.replace ("\n","");
                         // Check if the CPU temperature sensor is for the CPU package or a CPU core
-                        if (!cpu_temp_sensor_label.contains ("Package") && !cpu_temp_sensor_label.contains ("Tdie")) {
+                        if (!cpu_temp_sensor_label.contains ("Package") && !cpu_temp_sensor_label.contains ("Tdie") && !cpu_temp_sensor_label.contains ("Tctl") {
                             core_idx++;
                             continue;
                         }
