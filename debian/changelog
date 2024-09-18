@@ -1,3 +1,11 @@
+wingpanel-indicator-sysmon (0.6.6) focal; urgency=medium
+
+  * Updated CPU temp label sensor detection rule for AMD CPUs and newer kernels
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Wed, 18 Sep 2024 07:40:00 +0100
+
+
 wingpanel-indicator-sysmon (0.6.5) focal; urgency=medium
 
   * Added support for translations
