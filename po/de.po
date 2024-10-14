@@ -1,0 +1,97 @@
+# German translations for com.github.casasfernando.wingpanel-indicator-sysmon package.
+# Copyright (C) 2024 THE com.github.casasfernando.wingpanel-indicator-sysmon'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.casasfernando.wingpanel-indicator-sysmon package.
+# spotlesscoder, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.casasfernando.wingpanel-indicator-sysmon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-14 22:33+0100\n"
+"PO-Revision-Date: 2024-10-14 22:33+0100\n"
+"Last-Translator: spotlesscoder\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/Services/System.vala:58
+msgid " days, "
+msgstr " Tage, "
+
+#: src/Widgets/DiskWidget.vala:49 src/Widgets/DiskWidget.vala:58
+#: src/Widgets/DisplayWidget.vala:92 src/Widgets/IndicatorWidget.vala:52
+#: src/Widgets/NetworkWidget.vala:49 src/Widgets/NetworkWidget.vala:58
+#: src/Widgets/PopoverWidget.vala:94 src/Widgets/PopoverWidget.vala:101
+msgid "N/A"
+msgstr "n.a."
+
+#: src/Widgets/PopoverWidget.vala:49
+msgid "CPU Temperature"
+msgstr "CPU-Temperatur"
+
+#: src/Widgets/PopoverWidget.vala:51
+msgid "Swap"
+msgstr "Auslagerungsspeicher"
+
+#: src/Widgets/PopoverWidget.vala:52
+msgid "Uptime"
+msgstr "Laufzeit"
+
+#: src/Widgets/PopoverWidget.vala:53
+msgid "Load Average"
+msgstr "Durchschn. Last"
+
+#: src/Widgets/PopoverWidget.vala:54
+msgid "Network Up"
+msgstr "Netzwerk ausgehend"
+
+#: src/Widgets/PopoverWidget.vala:55
+msgid "Network Down"
+msgstr "Netzwerk eingehend"
+
+#: src/Widgets/PopoverWidget.vala:56
+msgid "Disk Read"
+msgstr "HDD lesend"
+
+#: src/Widgets/PopoverWidget.vala:57
+msgid "Disk Write"
+msgstr "HDD schreibend"
+
+#: src/Widgets/PopoverWidget.vala:60
+msgid "Open Settings…"
+msgstr "Einstellungen öffnen…"
+
+#: src/Widgets/Toggles.vala:45
+msgid "Show indicator icon only"
+msgstr "Nur Icon anzeigen"
+
+#: src/Widgets/Toggles.vala:48
+msgid "CPU usage"
+msgstr "CPU-Auslastung"
+
+#: src/Widgets/Toggles.vala:50
+msgid "CPU temperature"
+msgstr "CPU-Temperatur"
+
+#: src/Widgets/Toggles.vala:52
+msgid "RAM usage"
+msgstr "Auslastung Arbeitsspeicher"
+
+#: src/Widgets/Toggles.vala:54
+msgid "Network throughput"
+msgstr "Netzwerkdurchsatz"
+
+#: src/Widgets/Toggles.vala:56
+msgid "Disk throughput"
+msgstr "HDD-Durchsatz"
+
+#: src/Widgets/Toggles.vala:58
+msgid "Workspace number"
+msgstr "Arbeitsfläche Nummer"
+
+#: src/Widgets/Toggles.vala:60
+msgid "Show indicator"
+msgstr "Indikator anzeigen"
