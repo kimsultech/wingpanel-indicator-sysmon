@@ -35,6 +35,8 @@ Being this one of my first Vala applications I'm sure that the code can be impro
 
 - elementary OS 5.1.7 Hera
 - elementary OS 6.0 Odin
+- elementary OS 7.0 Horus
+- elementary OS 8.0 Circe
 
 ## Screenshots
 
@@ -51,6 +53,7 @@ Being this one of my first Vala applications I'm sure that the code can be impro
 You'll need the following dependencies:
 
 ```
+gettext
 libglib2.0-dev
 libgtop2-dev
 libgranite-dev
@@ -68,10 +71,16 @@ You can install them in **elementary OS Hera** running:
 sudo apt install libgtop2-dev libgranite-dev libgtk-3-dev libwingpanel-2.0-dev meson valac
 ```
 
-Or in **elementary OS Odin** running:
+Or in **elementary OS Odin/Horus** running:
 
 ```
 sudo apt install libgtop2-dev libgranite-dev libgtk-3-dev libwingpanel-dev libhandy-1-dev meson valac
+```
+
+Or in **elementary OS Cirse** running:
+
+```
+sudo apt install gettext libgtop2-dev libgranite-dev libgtk-3-dev libwingpanel-dev libhandy-1-dev meson valac
 ```
 
 Run `meson` to configure the build environment and then `ninja` to build
