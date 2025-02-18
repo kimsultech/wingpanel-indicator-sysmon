@@ -3,6 +3,10 @@
 </p>
 <h1 align="center">Wingpanel System Monitor</h1>
 
+## Archive notice
+
+Since I decided to migrate to a different distro, it's time for me to let this project go and archive it.
+
 ## About
 
 Wingpanel System Monitor is a status indicator that displays current system resources usage information in elementary OS Wingpanel.
