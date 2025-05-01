@@ -42,13 +42,13 @@ namespace WingpanelSystemMonitor {
             valign = Gtk.Align.CENTER;
 
 
-            cpu_info = new IndicatorWidget ("cpu-symbolic", 4);
-            cpu_temp_info = new IndicatorWidget ("cpu-temperature-symbolic", 4);
-            ram_info = new IndicatorWidget ("ram-symbolic", 4);
+            cpu_info = new IndicatorWidget ("cpu-symbolic", 4, "CPU");
+            cpu_temp_info = new IndicatorWidget ("cpu-temperature-symbolic", 4, "TEMP");
+            ram_info = new IndicatorWidget ("ram-symbolic", 4, "RAM");
             network_info = new NetworkWidget ();
             disk_info = new DiskWidget ();
-            workspace_info = new IndicatorWidget ("computer-symbolic", 2);
-            icon_only = new IndicatorWidget ("indicator-symbolic", 0);
+            workspace_info = new IndicatorWidget ("computer-symbolic", 2, "WORK");
+            icon_only = new IndicatorWidget ("indicator-symbolic", 0, "ICON");
             icon_only.label_value = "";
 
             add (icon_only);
@@ -80,6 +80,7 @@ namespace WingpanelSystemMonitor {
                 set_widget_visible (cpu_info, true);
             }
             cpu_info.label_value = val.to_string () + "%";
+            cpu_info.usage_value = val.to_string ();
         }
 
         public void update_cpu_temp (int val) {
@@ -92,6 +93,7 @@ namespace WingpanelSystemMonitor {
                 cpu_temp_info.label_value = _("N/A");
             } else {
                 cpu_temp_info.label_value = val.to_string () + "ºC";
+                cpu_temp_info.usage_value = val.to_string ();
             }
         }
 
@@ -102,6 +104,7 @@ namespace WingpanelSystemMonitor {
                 set_widget_visible (ram_info, true);
             }
             ram_info.label_value = val.to_string () + "%";
+            ram_info.usage_value = val.to_string ();
         }
 
         public void update_network (int upload, int download) {

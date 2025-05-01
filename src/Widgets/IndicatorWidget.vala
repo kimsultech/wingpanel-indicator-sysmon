@@ -22,13 +22,28 @@
 namespace WingpanelSystemMonitor {
     public class IndicatorWidget : Gtk.Box {
         private Gtk.Label label;
+        private Gtk.Label title_label;
         private Gtk.Revealer widget_revealer;
 
         public string icon_name { get; construct; }
         public int char_width { get; construct; }
+        public string title { get; construct; }
 
         public string label_value {
             set {label.label = value; }
+        }
+
+        public string usage_value {
+            set {
+                if (int.parse(value) >= 80) {
+                    label.get_style_context ().add_class ("high");
+                } else if (int.parse(value) >= 50) {
+                    label.get_style_context ().add_class ("medium");
+                } else {
+                    label.get_style_context ().remove_class ("high");
+                    label.get_style_context ().remove_class ("medium");
+                }
+            }
         }
 
         public bool display {
@@ -36,27 +51,35 @@ namespace WingpanelSystemMonitor {
             get { return widget_revealer.get_reveal_child () ; }
         }
 
-        public IndicatorWidget (string icon_name, int char_width) {
+        public IndicatorWidget (string icon_name, int char_width, string title) {
             Object (
                 orientation: Gtk.Orientation.HORIZONTAL,
                 icon_name: icon_name,
-                char_width: char_width
+                char_width: char_width,
+                title: title
             );
         }
 
         construct {
-            var icon = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.SMALL_TOOLBAR);
 
-            var group = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            var group = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+
+            title_label = new Gtk.Label (_("N/A"));
+            title_label.set_text(title);
+            title_label.set_width_chars (6);
+            title_label.get_style_context().add_class("title-label");
+            title_label.set_xalign (0);
 
             label = new Gtk.Label (_("N/A"));
-            label.set_width_chars (char_width);
+            label.set_width_chars (char_width + 1);
+            label.get_style_context().add_class("label-usage");
+            label.set_xalign (0);
 
-            group.pack_start (icon);
-            group.pack_start (label);
+            group.pack_start (title_label, false, false, 0);
+            group.pack_start (label, false, false, 0);
 
             widget_revealer = new Gtk.Revealer ();
-            widget_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
+            widget_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN;
             widget_revealer.reveal_child = true;
 
             widget_revealer.add (group);

@@ -10,3 +10,22 @@
     margin-bottom: 0px;
 }
 
+.title-label {
+    font-size: 8px;
+    padding: 0px;
+}
+
+.label-usage {
+    font-size: 12px;
+    padding: 0px;
+}
+
+.high {
+    color: #b00000;
+}
+.medium {
+    color: #cea100;
+}
+.normal {
+    color: #FFFFFF;
+}
