@@ -32,6 +32,7 @@ namespace WingpanelSystemMonitor {
         private Granite.SwitchModelButton workspace_switch;
         private Granite.SwitchModelButton icon_only_switch;
         private Granite.SwitchModelButton indicator;
+        private Granite.SwitchModelButton default_style_switch;
         public unowned Settings settings { get; construct set; }
 
         public TogglesWidget (Settings settings) {
@@ -59,6 +60,8 @@ namespace WingpanelSystemMonitor {
             workspace_switch.set_active (settings.get_boolean ("show-workspace"));
             indicator = new Granite.SwitchModelButton (_("Show indicator"));
             indicator.set_active (settings.get_boolean ("display-indicator"));
+            default_style_switch = new Granite.SwitchModelButton (_("Back to default style"));
+            default_style_switch.set_active (settings.get_boolean ("default-style"));
 
             settings.bind ("display-indicator", indicator, "active", SettingsBindFlags.DEFAULT);
 
@@ -69,6 +72,7 @@ namespace WingpanelSystemMonitor {
             settings.bind ("show-network", network_switch, "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-disk", disk_switch, "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-workspace", workspace_switch, "active", SettingsBindFlags.DEFAULT);
+            settings.bind ("default-style", default_style_switch, "active", SettingsBindFlags.DEFAULT);
 
             settings.bind ("icon-only", settings_separator, "visible", SettingsBindFlags.INVERT_BOOLEAN);
             settings.bind ("icon-only", cpu_switch, "visible", SettingsBindFlags.INVERT_BOOLEAN);
@@ -80,6 +84,7 @@ namespace WingpanelSystemMonitor {
 
             add (indicator);
             add (icon_only_switch);
+            add (default_style_switch);
             add (settings_separator);
             add (cpu_switch);
             add (cpu_temp_switch);

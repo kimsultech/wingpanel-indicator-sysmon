@@ -27,9 +27,17 @@ namespace WingpanelSystemMonitor {
         private Gtk.Label upload_label;
         private Gtk.Label download_label;
 
+        public bool default_style { get; construct; }
+
         public bool display {
             set { widget_revealer.reveal_child = value; }
             get { return widget_revealer.get_reveal_child () ; }
+        }
+
+        public NetworkWidget (bool default_style) {
+            Object (
+                default_style: default_style
+            );
         }
 
         construct {
@@ -37,7 +45,7 @@ namespace WingpanelSystemMonitor {
 
             // Define widget icons and sizes
             // Network icon
-            //var icon = new Gtk.Image.from_icon_name ("net-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            var icon = new Gtk.Image.from_icon_name ("net-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             // Upload icon
             var icon_up = new Gtk.Image.from_icon_name ("upload-read-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             icon_up.set_pixel_size (10);
@@ -69,7 +77,9 @@ namespace WingpanelSystemMonitor {
             group.set_row_spacing (0);
             group.set_row_homogeneous (true);
             // Add network icon
-            //group.attach (icon, 0, 0, 1, 2);
+            if (default_style) {
+                group.attach (icon, 0, 0, 1, 2);
+            }
             // Add upload icon
             group.attach (icon_up, 1, 0, 1, 1);
             // Add download icon

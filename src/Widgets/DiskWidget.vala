@@ -27,9 +27,17 @@ namespace WingpanelSystemMonitor {
         private Gtk.Label read_label;
         private Gtk.Label write_label;
 
+        public bool default_style { get; construct; }
+
         public bool display {
             set { widget_revealer.reveal_child = value; }
             get { return widget_revealer.get_reveal_child () ; }
+        }
+
+        public DiskWidget (bool default_style) {
+            Object (
+                default_style: default_style
+            );
         }
 
         construct {
@@ -38,12 +46,22 @@ namespace WingpanelSystemMonitor {
             // Define widget icons and sizes
             // Disk icon
             var icon = new Gtk.Image.from_icon_name ("disk-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+
             // Read icon
             var icon_read = new Gtk.Image.from_icon_name ("upload-read-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             icon_read.set_pixel_size (10);
             // Write icon
             var icon_write = new Gtk.Image.from_icon_name ("download-write-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             icon_write.set_pixel_size (10);
+
+            // Read icon (changed to "R")
+            var text_read = new Gtk.Label ("R");
+            text_read.get_style_context ().add_class ("small-label");
+            text_read.get_style_context ().add_class ("blue");
+            // Write icon (changed to "W")
+            var text_write = new Gtk.Label ("W");
+            text_write.get_style_context ().add_class ("small-label");
+            text_write.get_style_context ().add_class ("high");
 
             // Define read value label
             read_label = new Gtk.Label (_("N/A"));
@@ -69,11 +87,19 @@ namespace WingpanelSystemMonitor {
             group.set_row_spacing (0);
             group.set_row_homogeneous (true);
             // Add disk icon
-            group.attach (icon, 0, 0, 1, 2);
-            // Add read icon
-            group.attach (icon_read, 1, 0, 1, 1);
-            // Add write icon
-            group.attach_next_to (icon_write, icon_read, Gtk.PositionType.BOTTOM, 1, 1);
+            if (default_style) {
+                group.attach (icon, 0, 0, 1, 2);
+                // Add read icon
+                group.attach (icon_read, 1, 0, 1, 1);
+                // Add write icon
+                group.attach_next_to (icon_write, icon_read, Gtk.PositionType.BOTTOM, 1, 1);
+            } else {
+                // Add R text
+                group.attach (text_read, 1, 0, 1, 1);
+                // Add W text
+                group.attach_next_to (text_write, text_read, Gtk.PositionType.BOTTOM, 1, 1);
+            }
+            
             // Add read value label
             group.attach (read_label, 2, 0, 1, 1);
             // Add write value label

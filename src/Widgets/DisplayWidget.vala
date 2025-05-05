@@ -41,14 +41,15 @@ namespace WingpanelSystemMonitor {
         construct {
             valign = Gtk.Align.CENTER;
 
+            var default_style = settings.get_boolean ("default-style");
 
-            cpu_info = new IndicatorWidget ("cpu-symbolic", 4, "CPU");
-            cpu_temp_info = new IndicatorWidget ("cpu-temperature-symbolic", 4, "TEMP");
-            ram_info = new IndicatorWidget ("ram-symbolic", 4, "RAM");
-            network_info = new NetworkWidget ();
-            disk_info = new DiskWidget ();
-            workspace_info = new IndicatorWidget ("computer-symbolic", 2, "WORK");
-            icon_only = new IndicatorWidget ("indicator-symbolic", 0, "ICON");
+            cpu_info = new IndicatorWidget ("cpu-symbolic", 4, "CPU", default_style);
+            cpu_temp_info = new IndicatorWidget ("cpu-temperature-symbolic", 4, "TEMP", default_style);
+            ram_info = new IndicatorWidget ("ram-symbolic", 4, "RAM", default_style);
+            network_info = new NetworkWidget (default_style);
+            disk_info = new DiskWidget (default_style);
+            workspace_info = new IndicatorWidget ("computer-symbolic", 2, "WORK", default_style);
+            icon_only = new IndicatorWidget ("indicator-symbolic", 0, "ICON_ONLY", default_style);
             icon_only.label_value = "";
 
             add (icon_only);

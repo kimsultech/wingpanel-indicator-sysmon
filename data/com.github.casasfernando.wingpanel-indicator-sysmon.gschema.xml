@@ -45,5 +45,10 @@
       <summary>Show workspace number in Wingpanel</summary>
       <description></description>
     </key>
+    <key type="b" name="default-style">
+      <default>false</default>
+      <summary>Switch to Default Style</summary>
+      <description></description>
+    </key>
   </schema>
 </schemalist>
