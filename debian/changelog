@@ -1,3 +1,11 @@
+wingpanel-indicator-sysmon (0.6.7) noble; urgency=medium
+
+  * Added indicator Style (Simple Style Without Icon)
+
+
+ -- kimsultech <ssx20010531@gmail.com>  Mon, 05 May 2024 19:50:00 +0700
+
+
 wingpanel-indicator-sysmon (0.6.6) focal; urgency=medium
 
   * Updated CPU temp label sensor detection rule for AMD CPUs and newer kernels
